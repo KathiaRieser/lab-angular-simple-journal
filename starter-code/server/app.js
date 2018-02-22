@@ -7,6 +7,7 @@ const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const cors         = require('cors');
+const journalEntries = require('./route/api/journal-entries');
 
 mongoose.connect('mongodb://localhost/journal-development');
 
@@ -29,8 +30,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
-const index = require('./routes/index');
-app.use('/', index);
+//const index = require('./routes/index');
+//app.use('/', index);
+app.use('/api', journalEntries);
 
 app.all('/*', function (req, res) {
   res.sendfile(__dirname + '/public/index.html');
