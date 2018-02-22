@@ -7,7 +7,7 @@ const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const cors         = require('cors');
-const journalEntries = require('./route/api/journal-entries');
+const journalEntries = require('./routes/api/journal-entries');
 
 mongoose.connect('mongodb://localhost/journal-development');
 
