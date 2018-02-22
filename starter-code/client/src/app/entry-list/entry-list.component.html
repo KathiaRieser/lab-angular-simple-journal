@@ -4,4 +4,5 @@
 <div *ngFor="let journal of journalList">
   <p>{{journal.title}}</p>
   <p>{{journal.date}}</p>
+  <a [routerLink]="['journal-entries', journal._id]"> View Journal</a>
 </div>
